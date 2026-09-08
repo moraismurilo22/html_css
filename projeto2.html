@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizar Compra</title>
+</head>
+<body>
+
+    <h1>Finalizar Compra</h1>
+
+    <!-- Tag form: action define o destino e method="post" envia de forma oculta -->
+    <form action="/finalizar-pedido" method="post">
+
+        <!-- Fieldset 1: Agrupamento visual dos dados de endereço -->
+        <fieldset>
+            <legend>Endereço de Entrega</legend>
+
+            <label for="nome">Nome do Destinatário:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br><br>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" size="10" required>
+            <br><br>
+
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" name="rua" required>
+            <br><br>
+
+            <label for="numero">Número:</label>
+            <input type="number" id="numero" name="numero" min="1" required>
+            <br><br>
+
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento" name="complemento" placeholder="Apto, Bloco, Ponto de Referência">
+            <br><br>
+        </fieldset>
+
+        <!-- Fieldset 2: Agrupamento visual das opções de entrega -->
+        <fieldset>
+            <legend>Opções de Entrega</legend>
+
+            <!-- O ponto de entrada solicitado como SELECT -->
+            <label for="periodo">Período de Entrega:</label>
+            <select id="periodo" name="periodo" required>
+                <option value="">Selecione o período...</option>
+                <option value="manha">Manhã (08h-12h)</option>
+                <option value="tarde">Tarde (12h-18h)</option>
+                <option value="noite">Noite (18h-22h)</option>
+            </select>
+            <br><br>
+
+            <p>Instruções de Entrega:</p>
+            <!-- Radio buttons com o mesmo name para permitir apenas uma escolha -->
+            <input type="radio" id="portaria" name="instrucao" value="portaria">
+            <label for="portaria">Deixar na portaria</label>
+            <br>
+            
+            <input type="radio" id="maos" name="instrucao" value="maos">
+            <label for="maos">Entregar em mãos</label>
+            <br>
+            
+            <input type="radio" id="ligar" name="instrucao" value="ligar">
+            <label for="ligar">Ligar ao chegar</label>
+            <br><br>
+
+            <label for="cupom">Cupom de Desconto:</label>
+            <input type="text" id="cupom" name="cupom" placeholder="Insira seu cupom">
+            <br><br>
+
+            <!-- Checkbox para escolha independente (sim ou não) -->
+            <input type="checkbox" id="whatsapp" name="whatsapp" value="sim">
+            <label for="whatsapp">Receber ofertas por WhatsApp</label>
+            <br><br>
+        </fieldset>
+
+        <!-- Botões de ação do formulário -->
+        <button type="submit">Finalizar Compra</button>
+
+    </form>
+
+</body>
+</html>
