@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cotação de Seguro de Veículo</title>
+</head>
+<body>
+
+    <h1>Cotação de Seguro de Veículo</h1>
+
+    <form action="/cotacao" method="post">
+
+        <!-- Fieldset Condutor -->
+        <fieldset>
+            <legend>Condutor</legend>
+
+            <label for="nome">Nome do Proprietário:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br><br>
+
+            <label for="cnh">CNH:</label>
+            <input type="text" id="cnh" name="cnh" required>
+            <br><br>
+
+            <label for="data_cnh">Data de Emissão da CNH:</label>
+            <input type="date" id="data_cnh" name="data_cnh" placeholder="dd/mm/aaaa">
+            <br><br>
+
+            <label>Estado Civil:</label>
+            <br>
+            <input type="radio" id="solteiro" name="estado_civil" value="solteiro">
+            <label for="solteiro">Solteiro</label>
+            
+            <input type="radio" id="casado" name="estado_civil" value="casado">
+            <label for="casado">Casado</label>
+            
+            <input type="radio" id="divorciado" name="estado_civil" value="divorciado">
+            <label for="divorciado">Divorciado</label>
+            
+            <input type="radio" id="viuvo" name="estado_civil" value="viuvo" checked>
+            <label for="viuvo">Viúvo</label>
+            <br><br>
+        </fieldset>
+
+        <!-- Fieldset Veículo -->
+        <fieldset>
+            <legend>Veículo</legend>
+
+            <label for="placa">Placa do Carro:</label>
+            <input type="text" id="placa" name="placa" placeholder="ABC-1234" required>
+            <br><br>
+
+            <label for="marca">Marca do Veículo:</label>
+            <select id="marca" name="marca">
+                <option value="">Selecione...</option>
+                <option value="vw" selected>VW</option>
+                <option value="fiat">Fiat</option>
+                <option value="gm">GM</option>
+                <option value="ford">Ford</option>
+                <option value="honda">Honda</option>
+                <option value="toyota">Toyota</option>
+                <option value="hyundai">Hyundai</option>
+                <option value="nissan">Nissan</option>
+                <option value="outro">Outro</option>
+            </select>
+            <br><br>
+
+            <label for="ano">Ano do Modelo:</label>
+            <input type="number" id="ano" name="ano" min="1900" max="2026">
+            <br><br>
+        </fieldset>
+
+        <!-- Fieldset Uso -->
+        <fieldset>
+            <legend>Uso</legend>
+
+            <label>Usa o carro para trabalho (Uber/Taxi)?</label>
+            <br>
+            <input type="radio" id="sim_trabalho" name="trabalho" value="sim">
+            <label for="sim_trabalho">Sim</label>
+            
+            <input type="radio" id="nao_trabalho" name="trabalho" value="nao" checked>
+            <label for="nao_trabalho">Não</label>
+            <br><br>
+
+            <input type="checkbox" id="rastreador" name="rastreador" value="sim">
+            <label for="rastreador">Possui rastreador instalado</label>
+            <br><br>
+        </fieldset>
+
+        <button type="submit">Solicitar Cotação</button>
+
+
+    </form>
+
+</body>
+</html>
